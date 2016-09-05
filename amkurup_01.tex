@@ -1,0 +1,63 @@
+% Document type with options
+\documentclass[fleqn, letterpaper, 11.5pt]{article}
+
+\newcommand{\asgnmt}{01}
+\newcommand{\newdate}{September 03\, 2016}
+
+\input{layout}
+
+% Document begins
+\begin{document}
+
+\pagetitle % add the title
+\bigskip
+
+A network of spatially distributed autonomous sensors that have the capability to communicate with each other and some central server using wireless technology constitute a \textbf{W}ireless \textbf{S}ensor \textbf{N}etwork \textbf{(WSN)}. A WSN is made up of \enquote{nodes} which consist of a few to few-hundred or even thousand sensors. They can be very useful to monitor physical or environmental conditions, such as temperature, sound, pressure, etc.\par
+Wireless Sensor modules have grown in versatility and cost effectiveness which finds them useful in many applications. I have tried to list three the real world applications here:
+
+\begin{itemize}
+
+%%%%% Application 1
+%%%%%
+\item \textbf{Aerial robots for remote autonomous Surveillance and Mapping}\\
+- \textit{G. Loianno, M. Watterson and V. Kumar, Grasp Lab. University of Pennsylvania }\cite{Kumar}\\
+
+Most \textit{Unmanned Aerial Vehicles (UAV)'s}  are equipped with low cost sensors like \textit{cameras}, \textit{gyroscopes}, and \textit{accelerometers}. These sensors have been exploited to localize the position of a quadcopter and control it. Such an application can be deployed in GPS denied locations or highly cluttered areas for \textit{exploration}, \textit{inspection} and \textit{search and rescue} type of applications.\par
+The authors have used an \textit{AscTec Pelican}\cite{pelican} quadcopter platform which runs on an \textit{Intel NUC}\cite{Intel}. The platform houses an Arm7 microcontroller and communicates with the NUC over a \textbf{2.4GHz WiFi} link. The NUC is a full fledged Mini PC with an Intel Core processor and 802.11 support. The system is powered by a 3-cell LiPo battery.\par
+The drone uses an onboard Camera and an Inertial Measurement Unit to perform image processing which is used in conjunction with the accelerometer to track itself in the environment. Thus the quadcopter here can be thought of as a \enquote{node} of a WSN which in-turn consists of several such drones communicating with each other to form a \enquote{map} of the surrounding.\par
+
+\bigskip
+
+%%%%% Application 2
+%%%%%
+\item \textbf{Environmental monitoring in the Costa Rican rain forest}\\
+- \textit{W. J. Kaiser, Department of Electrical Engineering, UCLA} \cite{Pottie:2000:WIN:332833.332838}\\
+
+The aim of this study was to characterize the climate under the thick Costa Rican rainforest and study fluxes of carbon between the rain forest floor and the atmosphere to study the impact of greenhouse gases on the environment. The task was challenging because of the vast expanse of tropical rainforest which lies within a \textit{3,900-acre area}. Moreover, the rainfall averages \textit{13 feet} per year and \textit{two major rivers} confluence in the area. Given these conditions, Embedded WSN's are best suited for this task.\par
+The \textit{CompactRIO}\cite{CompactRIO} hardware module from National Instruments (NI) was chosen to design the WSN. These modules have the advanced Xilinx Zynq-7020 SOC and an ARM Cortex-A9 based controller enabling them to host a Linux based Real Time OS. These modules formed the \enquote{nodes} of the WSN. Sonic anemometers, Infrared sensors and Radiometers along with the processing elements enables the modules to perform local analysis before sending the data to the servers. \textit{LabVIEW} software was used along with the \textit{NI Wireless Access Point 3701}\cite{WAP3701} to provide wireless connectivity using \textbf{TCP/IP} over a simple message-based communication mechanism.\par
+Placement of these nodes has been done in such a way that a complete 3-dimensional map of the rain forest can be obtained. Real time as well as archived data from the sensors is available through web servers over the internet for post-processing.\par
+
+\bigskip
+
+%%%%% Application 3
+%%%%%
+\item\textbf{Enhancing efficiency and safety of Logistics operations}\\
+- \textit{Libelium}\cite{libelium}
+
+Cargo freight through sea containers is an essential element of todays economic system. \textit{90\% of the world's non-bulk cargo is transported by shipping containers}\cite{libelium2}. Around 10k containers are lost at sea each year causing huge losses of goods and negatively impacting the economy. Moreover, changes in temperature or moisture can damage certain goods within the containers. Thereforre logistics companies are relying on \textit{GPS} and \textit{GPRS} based technologies to minimize these risks and strengthen the value of freight movement. Embedded sensor modules are being used not only to locate and track the packages but also monitor conditions like temperature, moisture and pressure.\par
+The \textit{Waspmote wireless sensors}\cite{waspmote} have been used by logistics companies to \textit{track the goods}, \textit{detect unexpexted openings / leakages} and \textit{identification of storage conditions}. They also have the ability to send \textit{SMS alerts} in case of fires or exposure to floods. These sensors boast of features like RealTime clock, accelerometers and GPS technology to enable tracking. They are extremely low power consumption devices and have on-board Li-Ion batteries so that they can last upto 3 months at a stretch. These sensors communicate with each other, if need be, via \textbf{ZigBee} protocol and can connect to the internet over \textbf{WiFi}.\par
+In this application, each Waspmote module can be thought of as a \enquote{node} in a WSN, enabling every container to be monitored and action to be taken if the need arises. Features like \textit{Over The Air (OTA)} programming and advanced \textit{encryption} topologies make these nodes perfect embedded sensors for the modern world.\par
+
+\end{itemize}
+
+\bigskip
+
+%\newpage
+% References
+%\addcontentsline{toc}{section}{References}
+%\section*{References}
+\bibliographystyle{unsrt}
+\bibliography{ee572601}
+
+% Document ends
+\end{document}
