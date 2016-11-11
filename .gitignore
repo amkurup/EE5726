@@ -1,0 +1,7 @@
+#
+#Latex related junk
+*.log
+*.aux
+*.bbl
+*.blg
+*.out

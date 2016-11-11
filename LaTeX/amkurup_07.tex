@@ -1,0 +1,49 @@
+% Document type with options
+\documentclass[fleqn, letterpaper, 11.8pt]{article}
+
+\newcommand{\asgnmt}{07}
+\newcommand{\newdate}{October 17\, 2016}
+\newcommand{\course}{EE5726: Embedded Sensor Networks}
+\newcommand{\CourseNumber}{EE5726}
+
+\usepackage{scrextend}
+\input{../../layout}
+
+% Document begins
+\begin{document}
+
+\pagetitle % add the title
+\bigskip
+\textbf{Problem 1}
+
+A very popular MAC protocol is the \textbf{Media Access with Collision Avoidance (MACA)}. It senses the channel before data transmission and sends a Ready To Send (RTS) signal to the desired node before data transmission. If a Clear To Send (CTS) acknowledgement is not received in a set period of time, then it waits for a random time and retransmits the RTS signal. Once successful, data transmission can begin. Also, due to RTS, all the other nodes know exactly which nodes are communicating and can hold their data transmission. This reduces the number of collisions and gurantees higher throughput. 
+
+The routing protocol can make use of this feature and reduce its overheads to increase efficiency and performance. The various routing protocols we have studied include the simple \textbf{Flooding} and \textbf{Gossiping} protocol, \textbf{Destination-Sequenced Distance-Vector (DSDV)} proactive protocol, \textbf{Dynamic Source Routing (DSR}) and \textbf{Ad Hoc On-Demand Distance Vector Routing (AODV)} reactive protocol. 
+
+\textit{Flooding} simply forward its data to other nodes while \textit{Gossiping} forwards it data based on a probability. Both these protocols do not base their functioning on the lower MAC features. Therefore these protocols would not depend on the MAC protocols.
+
+AODV uses the exchange of HELLO messages to identify their neighbours. This reduces its end-to-end delay as compared to DSR and DSDV. These protocols use periodic messaging regardless of the underlying MAC protocol and hence incur extra overheads. Therefore, AODV is benefited by the underlying MACA protocol and gives better performance and efficiency as compared to DSR and DSDV.
+
+\bigskip
+\textbf{Problem 2}
+
+
+
+\ref{nw_top}
+\begin{figure}[hbtp]
+\begin{center}
+\includegraphics[width=4.5in]{network_topology.jpg}
+\caption{Network Topology}
+\label{nw_top}
+\end{center}
+\end{figure}
+
+%\newpage
+% References
+%\addcontentsline{toc}{section}{References}
+%\section*{References}
+%\bibliographystyle{unsrt}
+%\bibliography{ee572602}
+
+% Document ends
+\end{document}
